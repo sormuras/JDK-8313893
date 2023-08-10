@@ -1,0 +1,30 @@
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  openjdk:
+    strategy:
+      fail-fast: false
+      matrix:
+        jdk: [21, 22]
+    name: 'OpenJDK ${{ matrix.jdk }}'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Check out repository'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: 'Set up JDK'
+        uses: ./.github/actions/setup-test-jdk
+      - name: 'Set up JDK ${{ matrix.jdk }}'
+        uses: oracle-actions/setup-java@v1
+        with:
+          website: jdk.java.net
+          release: ${{ matrix.jdk }}
+          version: latest
+      - name: 'Print Java version'
+        shell: bash
+        run: java --version
