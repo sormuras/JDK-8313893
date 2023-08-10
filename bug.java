@@ -2,16 +2,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
 
-class version {
+class bug {
   public static void main(String... args) throws Exception {
     System.out.println("Java " + Runtime.version());
 
-    var errors = Path.of("errors-version.txt");
-    var output = Path.of("output-version.txt");
+    var errors = Path.of("errors-bug.txt");
+    var output = Path.of("output-bug.txt");
 
     var builder = new ProcessBuilder();
-    builder.command().add("java");
-    builder.command().add("--version");
+    builder.command().add("java"); // java -cp picocli-4.7.4.jar ASCIIArt.java
+    builder.command().add("-cp");
+    builder.command().add("picocli-4.7.4.jar");
+    builder.command().add("ASCIIArt.java");
     builder.redirectError(errors.toFile());
     builder.redirectOutput(output.toFile());
 
