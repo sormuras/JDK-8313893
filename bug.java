@@ -14,6 +14,7 @@ class bug {
     builder.command().add("-cp");
     builder.command().add("picocli-4.7.4.jar");
     builder.command().add("ASCIIArt.java");
+    builder.command().add("--help");
     builder.redirectError(errors.toFile());
     builder.redirectOutput(output.toFile());
 
