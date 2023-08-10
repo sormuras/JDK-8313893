@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: 'Check out repository'
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
       - name: 'Set up JDK'
         uses: ./.github/actions/setup-test-jdk
       - name: 'Set up JDK ${{ matrix.jdk }}'
