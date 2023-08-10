@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 class version {
   public static void main(String... args) throws Exception {
-    System.out.println("Java " + Runtime.getRuntime().version());
+    System.out.println("Java " + Runtime.version());
 
     var errors = Path.of("errors.txt");
     var output = Path.of("output.txt");

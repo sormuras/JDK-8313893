@@ -27,3 +27,6 @@ jobs:
       - name: 'Run Java program'
         shell: bash
         run: java version.java
+      - name: 'Show help of a Java program using Picocli'
+        shell: bash
+        run: java -cp picocli-4.7.4.jar ASCIIArt.java --help
