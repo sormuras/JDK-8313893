@@ -24,3 +24,6 @@ jobs:
       - name: 'Print Java version'
         shell: bash
         run: java --version
+      - name: 'Run Java program'
+        shell: bash
+        run: java version.java
