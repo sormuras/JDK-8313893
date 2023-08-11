@@ -24,15 +24,9 @@ jobs:
       - name: 'Print Java version'
         shell: bash
         run: java --version
-      - name: 'Run Java program'
+      - name: 'Show help of JUnit 1.9.3'
         shell: bash
-        run: java version.java
-      - name: 'Show help of a Java program using Picocli'
-        shell: bash
-        run: java -cp picocli-4.7.4.jar ASCIIArt.java --help
-      - name: 'Show help of JUnit Standalone Console'
+        run: java -jar junit-platform-console-standalone-1.9.3.jar --help
+      - name: 'Show help of JUnit 1.10.0'
         shell: bash
         run: java -jar junit-platform-console-standalone-1.10.0.jar --help
-      - name: 'Run a Java program using Picocli from Java'
-        shell: bash
-        run: java bug.java
