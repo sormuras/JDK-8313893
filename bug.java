@@ -10,11 +10,13 @@ class bug {
     var output = Path.of("output-bug.txt");
 
     var builder = new ProcessBuilder();
-    builder.command().add("java"); // java -cp picocli-4.7.4.jar ASCIIArt.java
-    builder.command().add("-cp");
-    builder.command().add("picocli-4.7.4.jar");
-    builder.command().add("ASCIIArt.java");
-    builder.command().add("--help");
+    // java -cp picocli-4.7.4.jar ASCIIArt.java
+    // java -jar junit-platform-console-standalone-1.10.0.jar execute --scan-modules
+    builder.command().add("java");
+    builder.command().add("-jar");
+    builder.command().add("junit-platform-console-standalone-1.10.0.jar");
+    builder.command().add("execute");
+    builder.command().add("--scan-modules");
     builder.redirectError(errors.toFile());
     builder.redirectOutput(output.toFile());
 
