@@ -13,20 +13,29 @@ jobs:
     name: 'OpenJDK ${{ matrix.jdk }}'
     runs-on: ubuntu-latest
     steps:
+
       - name: 'Check out repository'
         uses: actions/checkout@v3
+
       - name: 'Set up JDK ${{ matrix.jdk }}'
         uses: oracle-actions/setup-java@v1
         with:
           website: jdk.java.net
           release: ${{ matrix.jdk }}
           version: latest
+
       - name: 'Print Java version'
         shell: bash
         run: java --version
+
+      - name: 'Show help of JUnit 1.8.2'
+        shell: bash
+        run: java -jar junit-platform-console-standalone-1.8.2.jar --help
+
       - name: 'Show help of JUnit 1.9.3'
         shell: bash
         run: java -jar junit-platform-console-standalone-1.9.3.jar --help
+
       - name: 'Show help of JUnit 1.10.0'
         shell: bash
         run: java -jar junit-platform-console-standalone-1.10.0.jar --help
