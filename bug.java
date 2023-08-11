@@ -11,12 +11,11 @@ class bug {
 
     var builder = new ProcessBuilder();
     // java -cp picocli-4.7.4.jar ASCIIArt.java
-    // java -jar junit-platform-console-standalone-1.10.0.jar execute --scan-modules
+    // java -jar junit-platform-console-standalone-1.10.0.jar --help
     builder.command().add("java");
     builder.command().add("-jar");
     builder.command().add("junit-platform-console-standalone-1.10.0.jar");
-    builder.command().add("execute");
-    builder.command().add("--scan-modules");
+    builder.command().add("--help");
     builder.redirectError(errors.toFile());
     builder.redirectOutput(output.toFile());
 
